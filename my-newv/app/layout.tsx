@@ -1,10 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist } from "next/font/google"
+import { DM_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const geist = Geist({ subsets: ["latin"] })
+
+
+const dmSans = DM_Sans({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "OptiScam - AI Detection",
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "/optiscam-logo.svg",
         type: "image/svg+xml",
       },
     ],
@@ -35,8 +37,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geist.className} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${dmSans.className} antialiased`}>
         {children}
         <Analytics />
       </body>
